@@ -19,7 +19,7 @@ func Title(urls ...string) <-chan string {
 			}
 			html, _ := io.ReadAll(resp.Body)
 			r, _ := regexp.Compile("<title>(.*?)<\\/title>")
-			c <- r.FindStringSubmatch(string(html))[0]
+			c <- r.FindStringSubmatch(string(html))[1]
 		}(url)
 	}
 	return c
