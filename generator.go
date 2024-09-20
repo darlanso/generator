@@ -7,7 +7,7 @@ import (
 )
 
 // <-chan - canl somente leitura
-func title(urls ...string) <-chan string {
+func Title(urls ...string) <-chan string {
 	c := make(chan string)
 	for _, url := range urls {
 		go func(url string) {
